@@ -1,6 +1,8 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package Sequential.Layers;
 
-import Sequential.Optimizers.Adjustor;
 import Sequential.SequentialExceptions.InvalidDimensionException;
 
 import java.io.FileWriter;

@@ -1,3 +1,6 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package Sequential.Optimizers;
 
 import Sequential.Layers.TransformationLayer.TransformationLayer;
@@ -33,7 +36,6 @@ public class MiniBatch implements Optimizer{
                 NetUtil.four2FiveD(in, in.length / batchSize, batchSize, in[0].length, in[0][0].length, in[0][0][0].length);
         double[][][] y =
                 NetUtil.two2ThreeD(out, out.length / batchSize, batchSize, out[0].length);
-        Adjustor adj = (grad) -> (-1 * learnRate * grad);
 
         ArrayList<Layer> layers = net.getLayers();
         PrettyOutput pOutput = new PrettyOutput(x.length, epochs, 30, net.getLastLayer(), net.getMetrics(),

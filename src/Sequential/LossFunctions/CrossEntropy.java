@@ -1,3 +1,6 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package Sequential.LossFunctions;
 
 import Sequential.SequentialExceptions.InvalidDimensionException;

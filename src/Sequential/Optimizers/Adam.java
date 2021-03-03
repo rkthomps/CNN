@@ -1,3 +1,6 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package Sequential.Optimizers;
 
 import Sequential.Layers.Layer;
@@ -12,6 +15,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class representing an optimizer that implements the Adam optimization algorithm.
+ */
 public class Adam implements Optimizer{
     private double alpha;
     private double beta1;
@@ -19,30 +25,59 @@ public class Adam implements Optimizer{
     private double epsilon;
     private Sequential net;
 
+    /**
+     * Constructs a new Adam Optimizer.
+     * @param alpha Initial learning rate to be used by the optimizer.
+     * @param beta1 Initial first moment momentum to be used by the optimizer.
+     * @param beta2 Initial second moment momentum to be used by the optimizer.
+     * @param epsilon Initial epsilon value to be used by the optimizer.
+     */
     public Adam(double alpha, double beta1, double beta2, double epsilon){
         this.alpha = alpha;
         this.beta1 = beta1;
         this.beta2 = beta2;
         this.epsilon = epsilon;
     }
+
+    /**
+     * Constructs a new Adam Optimizer.
+     * @param alpha Initial learning rate to be used by the optimizer.
+     * @param beta1 Initial first moment momentum to be used by the optimizer.
+     * @param beta2 Initial second moment momentum to be used by the optimizer.
+     */
     public Adam(double alpha, double beta1, double beta2){
         this.alpha = alpha;
         this.beta1 = beta1;
         this.beta2 = beta2;
         this.epsilon = Math.pow(10, -8);
     }
+
+    /**
+     * Constructs a new Adam Optimizer.
+     * @param beta1 Initial first moment momentum to be used by the optimizer.
+     * @param beta2 Initial second moment momentum to be used by the optimizer.
+     */
     public Adam(double beta1, double beta2){
         this.alpha = 0.001;
         this.beta1 = beta1;
         this.beta2 = beta2;
         this.epsilon = Math.pow(10, -8);
     }
+
+    /**
+     * Constructs a new Adam Optimizer.
+     * @param alpha Initial learning rate to be used by the optimizer.
+     */
     public Adam(double alpha){
         this.alpha = alpha;
         this.beta1 = 0.9;
         this.beta2 = 0.999;
         this.epsilon = Math.pow(10, -8);
     }
+
+    /**
+     * Constructs a new Adam Optimizer.
+     */
     public Adam(){
         this.alpha = 0.001;
         this.beta1 = 0.9;

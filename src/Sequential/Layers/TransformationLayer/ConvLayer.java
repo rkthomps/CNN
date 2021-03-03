@@ -1,7 +1,6 @@
 package Sequential.Layers.TransformationLayer;
 
 import Sequential.Layers.Layer;
-import Sequential.Optimizers.Adjustor;
 import Sequential.WeightInitialization.*;
 import Sequential.Util.*;
 import Sequential.SequentialExceptions.*;

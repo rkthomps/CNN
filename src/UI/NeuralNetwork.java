@@ -1,3 +1,6 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package UI;
 
 import Sequential.LossFunctions.LossFunction;
@@ -89,14 +92,14 @@ public class NeuralNetwork {
      * Fit the network to an approximate mapping between the given inputs and outputs.
      * @param x Array of 3D inputs to the network for training.
      * @param y Array of 1D expected outputs corresponding to the inputs.
-     * @param batchsize Number of inputs that should be in training batches.
+     * @param batchSize Number of inputs that should be in training batches.
      * @param epochs Number of times the inputs should be trained on.
      * @throws InvalidDimensionException
      * @throws InvalidOperationException
      */
-    public void fit (double[][][][] x, double[][] y, int batchsize, int epochs)
+    public void fit (double[][][][] x, double[][] y, int batchSize, int epochs)
             throws InvalidDimensionException, InvalidOperationException{
-        net.fit(x, y, batchsize, epochs);
+        net.fit(x, y, batchSize, epochs);
     }
 
 

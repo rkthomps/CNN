@@ -1,12 +1,13 @@
+// Author: Kyle Thompson
+// Last Changed: 03/03/2021
+
 package Sequential.Layers;
 
-import Sequential.Optimizers.Adjustor;
 import Sequential.SequentialExceptions.InvalidDimensionException;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public abstract class Layer {
     protected int[] inDim;
