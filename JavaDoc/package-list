@@ -1,0 +1,10 @@
+Sequential
+Sequential.Layers
+Sequential.Layers.TransformationLayer
+Sequential.LossFunctions
+Sequential.NetOps
+Sequential.Optimizers
+Sequential.SequentialExceptions
+Sequential.Util
+Sequential.WeightInitialization
+UI
