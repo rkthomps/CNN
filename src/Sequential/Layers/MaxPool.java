@@ -1,7 +1,6 @@
-package Sequential.Layers.TransformationLayer;
+package Sequential.Layers;
 
 import Sequential.Layers.Layer;
-import Sequential.WeightInitialization.*;
 import Sequential.Util.*;
 import Sequential.SequentialExceptions.*;
 
@@ -12,7 +11,7 @@ import java.util.Scanner;
 
 import static java.lang.String.format;
 
-public class MaxPool extends TransformationLayer {
+public class MaxPool extends Layer {
     private int vertStride;
     private int horStride;
     private int[] outDim;
@@ -164,14 +163,6 @@ public class MaxPool extends TransformationLayer {
         return ret;
     }
 
-    // Given the gradients of this layers weights, make appropriate adjustments. Nothing to do here. No params
-    public void updateParamsMiniBatch(double learnRate) throws InvalidDimensionException{
-    }
-
-    // Update hte parameters for htis layer using an adam approach. Nothing to do here. no params
-    public void updateParamsAdam(double alpha, double b1, double b2, double e){
-    }
-
     // Return the output dimensions of this layer
     @Override
     public int[] getOutDim(){
@@ -184,12 +175,6 @@ public class MaxPool extends TransformationLayer {
         System.out.println(format("Maxpool Layer: Pool Size: " + Arrays.toString(poolDim) +
                         " In: " + Arrays.toString(inDim) + " Out: " + Arrays.toString(getOutDim()) + " HorStride: %4d VerStride: %4d",
                 horStride, vertStride));
-    }
-
-    // Print the trining info for this layer
-    @Override
-    public void printTrainInfo(){
-        System.out.println("Maxpool Layer. No parameters to be adjusted");
     }
 
     // Return the dimensions of the output of this layer

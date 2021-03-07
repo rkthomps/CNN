@@ -3,7 +3,7 @@
 
 package Sequential;
 
-import Sequential.Layers.TransformationLayer.*;
+import Sequential.Layers.TrainableLayer.*;
 import Sequential.Layers.*;
 import Sequential.LossFunctions.*;
 import Sequential.Optimizers.*;
@@ -42,7 +42,7 @@ public class Sequential {
         this.metrics = new String[0];
         // If previous layer is a tranformation layer, we need to add a default activation function
         // Maxpools don't need activation
-        if (getLastLayer() instanceof TransformationLayer && !(getLastLayer() instanceof MaxPool)){
+        if (getLastLayer() instanceof Trainable){
             addSoftMax();
         }
     }
@@ -248,8 +248,7 @@ public class Sequential {
 
         // If previous layer is a tranformation layer, we need to add a default activation function
         // Maxpools don't need activation
-        if (layers.size() > 0 && getLastLayer() instanceof TransformationLayer &&
-                !(getLastLayer() instanceof MaxPool)){
+        if (layers.size() > 0 && getLastLayer() instanceof Trainable){
             addRelu();
         }
 
@@ -276,8 +275,7 @@ public class Sequential {
 
         // If previous layer is a tranformation layer, we need to add a default activation function
         // Maxpools don't need activation
-        if (layers.size() > 0 && getLastLayer() instanceof TransformationLayer &&
-                !(getLastLayer() instanceof MaxPool)){
+        if (layers.size() > 0 && getLastLayer() instanceof Trainable){
             addRelu();
         }
 
@@ -310,8 +308,7 @@ public class Sequential {
 
         // If previous layer is a tranformation layer, we need to add a default activation function
         // Maxpools don't need activation
-        if (layers.size() > 0 && getLastLayer() instanceof TransformationLayer &&
-                !(getLastLayer() instanceof MaxPool)){
+        if (layers.size() > 0 && getLastLayer() instanceof Trainable){
             addRelu();
         }
 

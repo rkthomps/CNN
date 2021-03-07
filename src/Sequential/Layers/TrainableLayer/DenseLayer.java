@@ -1,6 +1,5 @@
-package Sequential.Layers.TransformationLayer;
+package Sequential.Layers.TrainableLayer;
 
-import Sequential.Layers.Layer;
 import Sequential.WeightInitialization.*;
 import Sequential.Util.*;
 import Sequential.SequentialExceptions.*;
@@ -12,7 +11,7 @@ import java.util.Scanner;
 
 import static java.lang.String.format;
 
-public class DenseLayer extends TransformationLayer {
+public class DenseLayer extends Trainable {
     private int numNodes;
     private int prevSize;
     private HeNormal wInit;

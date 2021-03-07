@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import Sequential.Layers.TransformationLayer.TransformationLayer;
+import Sequential.Layers.TrainableLayer.Trainable;
 import Sequential.LossFunctions.LossFunction;
 import Sequential.Optimizers.Adam;
 import Sequential.Optimizers.MiniBatch;
@@ -107,7 +107,7 @@ public class NetworkLoader {
             throw new InvalidNetworkFormatException("Convolutional layer must include num filters and filter size");
         }
         net.addConv(numNodes, poolDim, inSize, strideLength, null);
-        ((TransformationLayer)net.getLastLayer()).fillParams(scIn);
+        ((Trainable)net.getLastLayer()).fillParams(scIn);
         return true;
     }
 
@@ -133,7 +133,7 @@ public class NetworkLoader {
             throw new InvalidNetworkFormatException("Dense layer must include num nodes");
         }
         net.addDense(numNodes, inSize, null);
-        ((TransformationLayer)net.getLastLayer()).fillParams(scIn);
+        ((Trainable)net.getLastLayer()).fillParams(scIn);
         return true;
     }
 

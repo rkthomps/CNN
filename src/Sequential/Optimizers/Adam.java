@@ -4,7 +4,7 @@
 package Sequential.Optimizers;
 
 import Sequential.Layers.Layer;
-import Sequential.Layers.TransformationLayer.TransformationLayer;
+import Sequential.Layers.TrainableLayer.Trainable;
 import Sequential.Sequential;
 import Sequential.SequentialExceptions.InvalidDimensionException;
 import Sequential.SequentialExceptions.InvalidOperationException;
@@ -122,8 +122,8 @@ public class Adam implements Optimizer{
                     } else {
                         curGradients = layers.get(j).computeGradients(curGradients, flatIn[i]);
                     }
-                    if (layers.get(j) instanceof TransformationLayer){
-                        ((TransformationLayer) layers.get(j)).updateParamsAdam(alpha, curBeta1, curBeta2, epsilon);
+                    if (layers.get(j) instanceof Trainable){
+                        ((Trainable) layers.get(j)).updateParamsAdam(alpha, curBeta1, curBeta2, epsilon);
                     }
                 }
             }

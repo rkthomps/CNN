@@ -3,7 +3,8 @@
 
 package Sequential.Optimizers;
 
-import Sequential.Layers.TransformationLayer.TransformationLayer;
+
+import Sequential.Layers.TrainableLayer.Trainable;
 import Sequential.Sequential;
 import Sequential.Util.*;
 import Sequential.Layers.Layer;
@@ -58,8 +59,8 @@ public class MiniBatch implements Optimizer{
                     else{
                         curGradients = layers.get(j).computeGradients(curGradients, flatIn[i]);
                     }
-                    if (layers.get(j) instanceof TransformationLayer){
-                        ((TransformationLayer) layers.get(j)).updateParamsMiniBatch(learnRate);
+                    if (layers.get(j) instanceof Trainable){
+                        ((Trainable) layers.get(j)).updateParamsMiniBatch(learnRate);
                     }
                 }
             }

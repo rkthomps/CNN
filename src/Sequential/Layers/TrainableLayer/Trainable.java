@@ -1,13 +1,13 @@
-package Sequential.Layers.TransformationLayer;
+package Sequential.Layers.TrainableLayer;
 
 import Sequential.Layers.Layer;
 import Sequential.SequentialExceptions.InvalidDimensionException;
 
 import java.util.Scanner;
 
-public abstract class TransformationLayer extends Layer {
+public abstract class Trainable extends Layer {
 
-    public TransformationLayer(int[] inDim) throws InvalidDimensionException {
+    public Trainable(int[] inDim) throws InvalidDimensionException {
         super(inDim);
     }
 

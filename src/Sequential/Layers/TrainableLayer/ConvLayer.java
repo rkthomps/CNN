@@ -1,6 +1,5 @@
-package Sequential.Layers.TransformationLayer;
+package Sequential.Layers.TrainableLayer;
 
-import Sequential.Layers.Layer;
 import Sequential.WeightInitialization.*;
 import Sequential.Util.*;
 import Sequential.SequentialExceptions.*;
@@ -12,7 +11,7 @@ import java.util.Scanner;
 
 import static java.lang.String.format;
 
-public class ConvLayer extends TransformationLayer {
+public class ConvLayer extends Trainable {
     // Dimensions of filters are: numFilters, depth, height, width
     private double[][] filters;
     private double[][] prevFirstMoments;
