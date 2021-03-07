@@ -41,7 +41,7 @@ public class SigmoidLayer extends Layer{
         double[][] ret = new double[prevInput.length][prevInput[0].length];
         for (int i = 0; i < ret.length; i++){
             for (int j = 0; j < ret[0].length; j++){
-                ret[i][j] = Math.pow(Math.E, -1 * prevInput[i][j]) / (Math.pow(1 + Math.pow(Math.E, -1 * prevInput[i][j]), 2));
+                ret[i][j] = jacob[i][j] * Math.pow(Math.E, -1 * prevInput[i][j]) / (Math.pow(1 + Math.pow(Math.E, -1 * prevInput[i][j]), 2));
             }
         }
         return ret;
