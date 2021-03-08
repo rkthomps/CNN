@@ -5,6 +5,9 @@ import Sequential.SequentialExceptions.InvalidDimensionException;
 
 import java.util.Scanner;
 
+/**
+ * A layer that has trainable parameters and that should have parameter update methods.
+ */
 public abstract class Trainable extends Layer {
 
     public Trainable(int[] inDim) throws InvalidDimensionException {

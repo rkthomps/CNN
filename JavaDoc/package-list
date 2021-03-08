@@ -1,6 +1,7 @@
+
 Sequential
 Sequential.Layers
-Sequential.Layers.TransformationLayer
+Sequential.Layers.TrainableLayer
 Sequential.LossFunctions
 Sequential.NetOps
 Sequential.Optimizers
